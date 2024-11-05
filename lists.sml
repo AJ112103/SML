@@ -51,3 +51,11 @@ fun insert(x, []) = [x]
       if x < head then x :: head :: tail
       else head :: insert(x, tail);
 
+fun reverseList l =
+	let
+		fun revList([], acc) = acc
+		 | revList(head::tail, acc) = revList(tail, head::acc)
+	in
+		revList(l, [])
+	end;
+	
